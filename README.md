@@ -9,3 +9,7 @@ To build use
 ```bash
 .../signal_notes $ ./build
 ```
+| # | File  |
+| --- | ----|
+| 1   | [Lecture 1](out/Lec1.pdf)|
+| 2   | [Lecture 2](out/Lec2.pdf)|
