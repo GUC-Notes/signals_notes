@@ -1,0 +1,87 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{ex}{Example}
+\setlength{\columnsep}{1cm}
+
+ 
+\begin{document}
+\author{Ibrahim Abou Elenein}
+\title{Lecture 2 Summary}
+\date {\today}
+\maketitle
+
+\section{Periodicity}
+\subsection{General}
+\subsubsection{Continuous} 
+    
+if $ x(t) = x(t+T) \Longrightarrow x(t)$ is Periodic 
+    
+    
+\subsubsection{Discrete}
+    
+if $ x[n] = x[n+N] \Longrightarrow x[n]$ is Periodic  
+\subsection{Special Cases}
+\subsubsection{Continuous}
+Complex exponential is always periodic with period $ T_o = \frac{2\pi}{\omega _ o}$ \par
+
+\begin{ex}
+\[
+    e^{j\omega_o t} \ , \  \cos \omega_o t \ ,  \ \sin \omega _o t
+     \ \ \ \ \ \ \ T_o = \frac{2\pi}{\omega _o}
+\]
+\end{ex}
+
+\subsubsection{Discrete}
+Complex exponential may be periodic if $\frac{\omega _o}{2\pi}$ = rational number = $\frac{m}{N}$ where N is the period  
+
+\begin{ex}
+    \[
+        e ^{j\omega_o n} \ , \ \cos(\omega _o n) \ , \ \sin(\omega _o n)
+    \]
+\end{ex}
+
+    if $\frac{\omega_o}{2\pi} = \frac{m}{N}$ where N = Period 
+    
+\subsection{Examples}
+
+\begin{itemize}
+    \item  $x(t) = j e^{j10t}$ \ \ \ \ \ \ 
+    Periodic with $T_o = \frac{2\pi}{\omega_o} = \frac{\pi}{5}$
+   
+   \item $ x[n] = e^{j\pi n}$  \ \ \ \ \ $\frac{\omega_o}{2\pi} = \frac{1}{2}$ \ \  \ $N = 2$ 
+   
+   \item $x[n] = \cos(\frac{2\pi}{4}n)$  \ \ $\frac{\omega_o}{2\pi} = 
+        \frac{1}{4}$
+    \item $x[n] = 3 e ^{j\frac{3\pi}{5}(n + \frac{1}{2})} = 3 e^{j\frac{3\pi}{5}(0.5)}. e^{j \frac{3\pi}{5}n}$ \  \ 
+    $\frac{\omega_o}{2\pi} = \frac{3}{10}$
+\end{itemize}
+\subsection{Notes}
+\begin{itemize}
+    \item constant functions is periodic with arbitrary period
+    \item Periodic $\pm$ aperiodic  = aperiodic 
+    \item periodic x  aperiodic = aperiodic 
+    \item periodic $\pm$  aperiodic = periodic  \ \ if $\frac{\omega _o1}{\omega_o 2} =$ rational \\
+    
+    The Period of the sum of two periodic signals is the lowest common
+    multiple LCM of the individual periods. \\
+    
+    The frequency of the sum of two periodic signal is the greatest common divisor GCD of the individual frequencies. 
+
+\end{itemize}
+\subsubsection{Examples}
+
+\begin{enumerate}
+    \item $x(t) = e^{(j-1)t} = e^{jt}(complex \ \ exp) * e^{-t}(real  \  \ exp) $ = \\  periodic x aperiodic  $\longrightarrow x(t)$ is aperiodic 
+    
+    \item $x(t) = \cos(\pi t) + \sin(2t)$  \ \ $\frac{\omega_{o1}}{\omega_{o2}} = \frac{\pi}{2} $ is not rational s $x(t)$ is not periodic 
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,130 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{ex}{Example}
+\setlength{\columnsep}{1cm}
+
+ 
+\begin{document}
+\author{Ibrahim Abou Elenein}
+\title{Lecture 1 Summary}
+\date {\today}
+\maketitle
+\section{Energy and Power}
+
+\subsection{Energy}
+
+\begin{multicols}{2}
+    \textbf{ \ Continuous} 
+    \begin{equation}
+        E_\infty= \int ^{\infty} _{- \infty} |x(t)|^2 dt 
+    \end{equation}
+    
+    \columnbreak
+    
+    \textbf{ \  Discrete}
+    \begin{equation}
+        E_\infty= \sum ^{\infty} _{- \infty} |x[n[|^2
+    \end{equation}
+\end{multicols}
+\subsection{Power}
+\subsubsection{For non Periodic Signals }
+\begin{multicols}{2}
+    
+    \textbf{ \ Continuous} 
+    \begin{equation}
+        P_{\infty} = \displaystyle \lim _{T \to \infty} \frac{1}{2T} \int 
+        _{-T} ^{T} |x(t)|^2 dt
+    \end{equation}
+    
+    \columnbreak
+    
+    \textbf{ \  Discrete}
+    \[
+        P_{\infty} = \displaystyle \lim _{N \to \infty} \frac{1}{2N+1} \sum 
+        _{-N} ^{N} |x[n]|^2 
+        \]
+\end{multicols}
+\subsubsection{For Periodic} 
+\[
+    P = \frac{1}{T_o} \int_{\frac{-T_o}{2}} ^{\frac{T_o}{2}} |x_p(t)|^2 dt
+\]
+    where $T_o$ is The Fundamental Period
+    
+\section{Signal Decomposition}    
+\[
+    x(t) = Ev{x(t)} + Od{x(t)}
+\]
+\textbf{With} \\ 
+
+\begin{multicols}{2}
+    \[
+        Ev \{x(t)\} = \frac{1}{2}[x(t) + x(-t)]
+    \]
+    
+    \columnbreak
+    
+    \[
+        Od \{x(t)\} = \frac{1}{2}[x(t) - x(-t)]
+    \]
+    
+\end{multicols}
+\section{Notes}
+\begin{itemize}
+    \item  A Power Signal is signal its power is finite 
+    \item  An Energy Signal is signal its energy is finite 
+\end{itemize}
+\subsection{From Euler Formula}
+\[
+    e^{jx} = \cos x + j \sin x \ 
+\]
+\[
+    |e^{jx}| = |\cos x + j \sin x| = \sqrt{\cos^2 x + \sin^2 x} = 1
+\]
+
+\subsection{Unit step function}
+
+\[
+    u(t) = \begin{cases}
+        0, & \text{$t < 0$} \\ 
+        1, & \text{$t > 0$}
+    \end{cases}
+\]
+\[
+    | f(t)u(t)| = f(t)  \ \  \ \  \   \  0 < t < \infty   
+\]
+\subsection{Geometric Series}
+\[
+    a + ar + ar^2 + \dots +ar^n = \displaystyle \sum_{k = 0} ^{n} ar^k = a(\frac{1 - r^{n + 1}}{1 -r}) 
+\]
+\[
+    a + ar + ar^2 + \dots = \displaystyle \sum _{k = 0} ^{\infty} ar^k = \frac{a}{1 - r}
+\  \  \  \ for  \ \ |r| < 1 
+\]
+\subsection{Series}
+\[  
+    \displaystyle \sum _{i = 1} ^{n} c = n.c
+\]
+\[  
+    \displaystyle \sum _{n = 0} ^{N} c = (N + 1 ).c
+\]
+\[
+    \displaystyle \sum _{n = -N} ^{N} c = \sum _{n = 0}^{2N} c = c (2N + 1) \ 
+\]
+Shifting by adding the upper and lower bound by N
+
+\[
+    \displaystyle \sum _{i = 1} ^n i = \frac{n(n+1)}{2}
+\]
+\[
+    \displaystyle \sum _{i = 1} ^n i^2 = \frac{n(n+1)(2n+1)}{6}
+\]
+
+\end{document}
