@@ -1,3 +1,4 @@
+#!/usr/bin/bash
 # Generate PDFs from the Latex source files
 
 for file in $(ls src/*.tex);do

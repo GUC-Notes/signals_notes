@@ -1,0 +1,98 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{ex}{Example}
+\setlength{\columnsep}{1cm}
+
+ 
+\begin{document}
+\author{Ibrahim Abou Elenein}
+\title{Unit Step and Unit Impulse}
+\date {\today}
+\maketitle
+\section{Discrete Unit Impulse }
+\[
+    \delta(n) = \begin{cases}
+        1, &n = 0 \\
+        0, & n \neq 0 
+    \end{cases}
+\]
+
+\section{Discrete Unit Step}
+\[
+    u(n) = \begin{cases}
+        1, &n \geq 0 \\
+        0, & n < 0 
+    \end{cases}
+\]
+\section{Rectangler Signal}
+\[
+    x(n) = \begin{cases}
+        1, & 0 \leq n \leq N \\
+        0, & otherwise
+    \end{cases}
+\]
+\section{Continuous Unit Step}
+\[
+    u(t) = \begin{cases}
+        1, &t > 0 \\
+        0, & t < 0 
+    \end{cases}
+\]
+\section{Continuous Unit Impulse}
+    \[
+        \delta(t) = 0 \ for \  t \neq 0 
+    \]
+\section{Relation between Unit Impulse and Unit Step}
+\[
+    \delta(n) = u(n) - u(n-1)
+\]
+\[
+    \delta(t) = \frac{d}{dt} [u(t)] 
+\]
+\[
+    \displaystyle u(n) = \sum_{k=0}^{\infty} \delta(n-k)
+\]
+\[
+    \displaystyle u(n) = \sum_{m=-\infty}^{n} \delta(m)
+\]
+\[
+    \displaystyle u(t) = \int_{-\infty}^{t} \delta(\tau) d\tau
+\]
+
+\section{Notes}
+\[
+    \int_{-\infty}^{\infty} \delta(\tau)d\tau = 1
+\]
+\[
+    x(n) = \sum_{k=-\infty}^{\infty} x(k) \delta(n-k)
+\]
+\[
+    \displaystyle \int_{t_o - \epsilon}^{t_o + \epsilon}  
+    f(t)\delta(t-t_o)dt = f(t_o) \forall \ \ \ \epsilon > 0
+\]
+Example
+\[
+    \int_0^2 sin(\pi t) \delta(t-2.5) dt  
+\]
+at $ t = 2.5 $ this  value are not in the interval [0,2] so it's zero
+
+
+
+Example
+\[
+    \int_{-4}^7 sin(\frac{\pi t}{2}) \delta(t-1) dt  
+\]
+the value $ t = 1 $ is in the interval so 
+\[
+    \int_{-4}^7 sin(\frac{\pi t}{2}) \delta(t-1) dt =
+    f(1) = \sin(\frac{\pi \times 1}{2}) = \sin(\frac{\pi}{2}) = 1
+\]
+\end{document}
