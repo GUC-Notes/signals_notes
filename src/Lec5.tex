@@ -60,7 +60,7 @@ $x(t)$ is periodic with Period $T$ whrere $\omega_o
 \[
     \displaystyle \int_0^T x(t)e^{-jn\omega_ot} dt =
     \int_0^T\sum_{k=-\infty}^{\infty} a_k e^{j(k-n)\omega_ot} dt \   a_k 
-     \ \text{are time-independent}
+    \ \text{are time-independent}
 \]
 \[
     \displaystyle \int_0^T x(t)e^{-jn\omega_ot} dt =
@@ -180,4 +180,14 @@ Collecting like terms
     \ \ a_k = 0 \ \ \text{for} \ |k| > 2 
 \]
 \subsection{Periodic Impulse Train}
+Unit Impulse $(\delta(t))$ repating itself every period T 
+\begin{center}
+    \includegraphics[width=201px]{impulse-train.png}
+
+\end{center}
+\[
+    \boxed{a_k = \frac{1}{T}}
+\]
+\textbf{Note} The periodic impulse train must be centered at 0 and has amplitude $=1$
+Otherwise, it will be a shifted and scaled periodic impulse train.
 \end{document}
