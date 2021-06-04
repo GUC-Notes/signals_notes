@@ -190,4 +190,42 @@ Unit Impulse $(\delta(t))$ repating itself every period T
 \]
 \textbf{Note} The periodic impulse train must be centered at 0 and has amplitude $=1$
 Otherwise, it will be a shifted and scaled periodic impulse train.
+
+\subsection{Periodic Rectangle Wave }
+\begin{center}
+    \includegraphics[width=300px]{rectangle-wave.png}
+\end{center}
+\textbf{The poof is letf to the reader.}
+\[
+    a_o = \frac{\text{Area of one period}}{T} = \frac{2T_1}{T}.
+\]
+\[
+    \displaystyle
+    a_k = \begin{cases}
+        \dfrac{2T_1}{T}& , k = 0\\
+        \dfrac{\sin(k\omega_otT_1)}{k\pi} & , k \neq 0 
+    \end{cases}
+\]
+\textbf{Note} The periodic rectangle wave must be centered at 0 and has amplitude $=1$
+Otherwise, it will be a shifted and scaled periodic rectangle wave.
+\section{Convergence of The Fourier Series}
+The conditions for a periodic signal $x(t)$ to have a Fourier Series as follows :
+\subsection{Condition one}
+Over any period x(t) must be absolutely integrable 
+\[
+    \int_T |x(t)| dt < \infty
+\]
+and this guarantees that 
+\[
+    |a_k| \leq \frac{1}{T} \int_T |x(t) e^{-j\omega_ot}| dt = \dfrac{1}{T} 
+    \int_T |x(t)| dt \Rightarrow |a_k| < \infty
+\]
+
+\subsection{Condition two}
+ In any finite interval of time, $x(t)$ is of bounded 
+variation; that is, there are no more than a finite number of 
+maxima and minima during any single period of the signal.
+
+\subsection{Condition three}
+In any finite interval of time, there are only a finite number of discontinutous
 \end{document}
