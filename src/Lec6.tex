@@ -1,0 +1,186 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{ex}{Example}
+\setlength{\columnsep}{1cm}
+
+
+\begin{document}
+\author{\textbf{Ibrahim Abou Elenein}}
+\title{\textbf{Properties of CT Fourier Series}}
+\date {\today}
+\maketitle
+\section{Linearity}
+Let 
+\[
+    x(t) \xrightarrow{\mathcal{F}\mathcal{S}} a_k
+\]
+\[
+    y(t) \xrightarrow{\mathcal{F}\mathcal{S}} b_k
+\]
+two periodic signals with period $T$, then 
+\[
+    z(t) = Ax(t) + By(t) \xrightarrow{\mathcal{F}\mathcal{S}} c_k = Aa_k + Bb_k
+\]
+\textbf{Proof}
+\[
+    c_k = \frac{1}{T} \int_T z(t)e^{-jk\omega_ot} dt 
+    = \frac{1}{T} \int_T [Ax(t) + By(t)]e^{-jk\omega_ot} dt
+\]
+\[
+    = A \frac{1}{T} \int_T x(t)e^{-jk\omega_ot} dt + B \frac{1}{T} \int_T y(t) e^{-jk\omega_ot} dt
+\]
+\[
+    = Aa_k+ Ba_k
+\]
+\section{Time Shifting}
+Let 
+\[
+    x(t) \xrightarrow{\mathcal{F}\mathcal{S}} a_k
+\]
+Then 
+\[
+    x(t-t_o) \xrightarrow{\mathcal{F}\mathcal{S}} b_k = e^{-jk\omega_ot_o}a_k = e^{jk(2\frac{\pi}{T})t_0} a_k 
+\]
+\textbf{Note} $|b_k| = |a_k| $\\
+
+
+\textbf{Proof}
+\[
+    b_k = \frac{1}{T} \int_T x(t-t_0) e^{-jk\omega_ot} dt \stackrel{\tau=t-t_o}{=} \frac{1}{T} \int_T 
+    x(\tau) e^{-jk\omega_o(\tau+t_o)} d\tau
+\]
+\[
+    = e^{-jk\omega_ot_o}  \underbrace{\frac{1}{T}\int_T x(\tau) e^{-jk\omega_o\tau} d\tau}_{a_k} = e^{-jk\omega_ot_o} a_k
+\]
+\section{Time Scaling}
+\[
+    t \Rightarrow \alpha t , \ \ \  \alpha > 0
+\]
+\begin{enumerate}
+    \item period changes $T \rightarrow \frac{T}{\alpha} $
+    \item fundamental frequency changes $\omega_o \rightarrow \alpha \omega_o $
+\end{enumerate}
+Fourier Series representation
+\[
+    \displaystyle x(\alpha t) = \sum_{k=-\infty}^{\infty} a_k e^{jk(\frac{\alpha 2 \pi}{T})t} =
+    \sum_{k=-\infty}^{\infty} a_k e^{jk(\alpha \omega_o)t}
+\]
+\section{Differentiation}
+Let 
+\[
+    x(t) \xrightarrow{\mathcal{F}\mathcal{S}} a_k
+\]
+Then 
+\[
+    \dfrac{dx(t)}{dt} = jk\omega_o a_k
+\]
+\section{Multiplication}
+Let 
+\[
+    x(t) \xrightarrow{\mathcal{F}\mathcal{S}} a_k
+\]
+\[
+    y(t) \xrightarrow{\mathcal{F}\mathcal{S}} b_k
+\]
+\[
+    z(t) = x(t)y(t) \xrightarrow{\mathcal{F}\mathcal{S}} c_k = \sum_{i=-\infty}^{\infty} a_ib_{k-i} \Rightarrow
+    \text{discrete-time convloution of} a_k \ \text{and} \ b_k
+\]
+\[
+    c_k = a_k * b_k
+\]
+\section{Parseval's Relation}
+Let 
+\[
+    x(t) \xrightarrow{\mathcal{F}\mathcal{S}} a_k
+\]
+Then 
+\[
+    \boxed{\frac{1}{T} \int_T |x(t)|^2 dt = \sum_{k=-\infty}^{\infty}|a_k|^2 }
+\]
+Hence Average total power of the signal is sum of the average powers in all of harmonic components.
+\section{Time Reversal}
+Let 
+\[
+    x(t) \xrightarrow{\mathcal{F}\mathcal{S}} a_k
+\]
+Then 
+\[
+    x(-t) \xrightarrow{\mathcal{F}\mathcal{S}} b_k = a_{-k}
+\]
+\textbf{Proof}
+\[  
+    x(t) = \sum_{k=-\infty}^{\infty} a_k e^{jk\omega_ot}, \Longrightarrow x(-t)= \sum_{k=-\infty}^{\infty} a_k e^{-jk\omega_ot}
+\]
+\[
+    \displaystyle \stackrel{k=-m}{=}  \sum_{m=-\infty}^{\infty} \ a_{-m} e^{jm\omega_ot}
+\]
+
+\section{Conjugation and Conjugate Symmetry}
+Let 
+\[
+    x(t) \xrightarrow{\mathcal{F}\mathcal{S}} a_k
+\]
+Then 
+\[
+    x^*(t) \xrightarrow{\mathcal{F}\mathcal{S}} a^*_{-k}
+\]
+\begin{itemize}
+    \item If $x(t) = x^*(t) \Rightarrow a_k = a^*_{-k}  \Longrightarrow  x(t) \ \text{real}$
+    \item If $x(t) = -x^*(t) \Rightarrow a_k = -a^*_{-k}  \Longrightarrow  x(t) \ \text{img}$
+
+\end{itemize}
+\section{Summary}
+Let 
+\[
+    x(t) \xrightarrow{\mathcal{F}\mathcal{S}} a_k
+\]
+\[
+    y(t) \xrightarrow{\mathcal{F}\mathcal{S}} b_k
+\]
+\begin{enumerate}
+    \item Linearity
+
+        \[
+            Ax(t) + By(t) \xrightarrow{\mathcal{F}\mathcal{S}} Aa_k + Bb_k
+        \]
+    \item Time Shift
+\[
+    x(t-t_o) \xrightarrow{\mathcal{F}\mathcal{S}} a_k e^{-jk\omega_ot_o}
+\]
+\item Time Scale
+\[
+    x(\alpha t) \xrightarrow{\mathcal{F}\mathcal{S}} a_k 
+\]
+\item Differentiation
+\[
+    \dfrac{dx(t)}{dt} \xrightarrow{\mathcal{F}\mathcal{S}} jk\omega_o a_k
+\]
+\item Integration
+    \[
+        \int_{-\infty}^t x(\tau)d\tau \xrightarrow{\mathcal{F}\mathcal{S}} 
+        \frac{a_k}{jk\omega_o}
+    \]
+\item Convolution 
+    \[
+        x(t)*y(t) \xrightarrow{\mathcal{F}\mathcal{S}} Ta_kb_k
+    \]
+\item Multiplication
+    \[
+        x(t)y(t) \xrightarrow{\mathcal{F}\mathcal{S}} a_k*b_k
+    \]
+\end{enumerate}
+\section{Notes}
+\begin{itemize}
+    \item if $x(t)$ is real \& even $\Rightarrow a_k$ is real \& even   
+    \item if $x(t)$ is real \& odd $\Rightarrow a_k$ is pure \& odd.
+\end{itemize}
+\end{document}
